@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
-  private apiKey = 'f952ca2cb623c526297f5df6490af349'; // replace with your actual key
+  private apiKey = 'f952ca2cb623c526297f5df6490af349';
   private apiUrl = 'http://api.weatherstack.com/current';
 
   constructor(private http: HttpClient) {}
