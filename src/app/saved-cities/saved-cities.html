@@ -1,0 +1,12 @@
+<h2>Saved Cities</h2>
+
+<ul *ngIf="cities.length > 0; else noCities">
+  <li *ngFor="let city of cities">
+    {{ city }}
+    <button (click)="remove(city)" style="margin-left:10px;">Remove</button>
+  </li>
+</ul>
+
+<ng-template #noCities>
+  <p>No saved cities yet.</p>
+</ng-template>
