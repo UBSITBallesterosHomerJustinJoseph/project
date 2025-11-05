@@ -8,8 +8,12 @@ export class WeatherService {
   private apiUrl = 'https://api.weatherstack.com/current';
 
   constructor(private http: HttpClient) {}
+getWeather(city: string): Observable<any> {
+  const url = `https://api.allorigins.win/get?url=${encodeURIComponent(
+    'http://api.weatherstack.com/current?access_key=f952ca2cb623c526297f5df6490af349&query=' + city
+  )}`;
+  return this.http.get(url);
+}
 
-  getWeather(city: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}?access_key=${this.apiKey}&query=${city}`);
-  }
+ 
 }
